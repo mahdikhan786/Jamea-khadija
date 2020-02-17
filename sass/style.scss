@@ -15,6 +15,20 @@
 body{
    overflow-x: hidden;
 }
+::-webkit-scrollbar{
+    box-shadow:inset 10px 0px 22px 0px black;
+    width:10px;
+    background-color:white;
+     }
+     ::-webkit-scrollbar-button{
+         background:rgb(23, 26, 24);
+     }
+     ::-webkit-scrollbar-thumb{
+         border-radius:5px;
+background: radial-gradient(circle, rgba(62,143,60,0.989233193277311) 0%, rgba(72,121,67,1) 37%, rgba(43,48,43,0.9752275910364145) 100%);
+     }
+     
+
 .homepage{
     position: relative;
     display: grid;
@@ -128,7 +142,8 @@ body{
     padding:10px;
     display:grid;
     grid-template-columns: repeat(12,1fr);
-    grid-auto-rows: 30vh auto;
+    grid-template-rows: 30vh;
+    grid-auto-rows: auto;
     grid-template-areas: "title title title title title title title title title title title title "
     ". para para para para para para para para para para ."
     ". gallery gallery gallery gallery gallery gallery gallery gallery gallery gallery .";
@@ -195,7 +210,8 @@ body{
     background:var(--page-background-odd);
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    grid-auto-rows: 30vh auto;
+    grid-template-rows: 30vh ;
+    grid-auto-rows: auto;
     grid-template-areas: ". heading heading heading heading heading heading heading heading heading heading ."
                         ". para para para para para para para para para para ."
     "form form form form form form form form form form form form";
@@ -210,7 +226,6 @@ body{
         font-size: var(--heading-font-size);
     }
     .contact-para{
-        border-left: 1px solid rgba(255,255,255,0.4);
         font-family: 'Courier New', Courier, monospace;
         font-size:16px;
         padding:15px;
@@ -269,6 +284,7 @@ body{
         grid-template-areas: ". heading heading heading heading heading heading heading heading heading heading ."
                         "form form form form form form para para para para para para";
         .contact-para{
+            border-left: 1px solid rgba(255,255,255,0.4);
             align-self: flex-start;
             font-size:24px;
            margin:20% 10% 0% 10%;
