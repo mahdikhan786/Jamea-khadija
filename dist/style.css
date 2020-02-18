@@ -1,3 +1,4 @@
+@import url(//fonts.googleapis.com/earlyaccess/notonastaliqurdu.css);
 :root {
   --page-background-odd:rgb(48, 45, 45);
   --page-background-even:rgb(228, 220, 220);
@@ -6,6 +7,15 @@
   --para-color-odd:rgb(156, 151, 151);
   --para-color-even:rgb(92, 88, 88);
   --heading-font-size:20px;
+}
+
+.urdu-text {
+  letter-spacing: 1.5px;
+  direction: rtl;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  font-family: 'Noto Nastaliq Urdu', serif;
 }
 
 * {
@@ -98,8 +108,8 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -webkit-box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.5), -1px -1px 7px 0px rgba(255, 255, 255, 0.5);
-          box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.5), -1px -1px 7px 0px rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: -3px -3px 7px 0px rgba(0, 0, 0, 0.7), inset 3px 3px 7px 0px rgba(0, 0, 0, 0.5), 3px 3px 7px 0px rgba(255, 255, 255, 0.5), inset -3px -3px 7px 0px rgba(255, 255, 255, 0.3);
+          box-shadow: -3px -3px 7px 0px rgba(0, 0, 0, 0.7), inset 3px 3px 7px 0px rgba(0, 0, 0, 0.5), 3px 3px 7px 0px rgba(255, 255, 255, 0.5), inset -3px -3px 7px 0px rgba(255, 255, 255, 0.3);
 }
 
 .homepage .title-eng {
@@ -132,7 +142,8 @@ body {
       align-self: center;
 }
 
-.homepage p {
+.homepage .main-para {
+  direction: rtl;
   color: var(--para-color-odd);
   -ms-grid-row: 3;
   -ms-grid-column: 5;
@@ -253,6 +264,9 @@ body {
   -ms-grid-column-span: 10;
   grid-area: gallery;
   overflow: hidden;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   position: relative;
   -webkit-box-shadow: inset 0 0 12px 0px black;
           box-shadow: inset 0 0 12px 0px black;
@@ -330,7 +344,6 @@ body {
 }
 
 .contactpage .contact-para {
-  font-family: 'Courier New', Courier, monospace;
   font-size: 16px;
   padding: 15px;
   -ms-grid-row: 2;
@@ -343,11 +356,6 @@ body {
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
-}
-
-.contactpage .contact-para span {
-  text-align: justify;
-  direction: rtl;
 }
 
 .contactpage .contact-form {
@@ -369,11 +377,19 @@ body {
     letter-spacing: 3.5px;
   }
   .homepage img {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
   }
   .homepage .title-urdu {
     font-size: 36px;
+  }
+  .homepage .main-para {
+    line-height: 50px;
+    font-size: 32px;
+  }
+  .homepage .main-para .main-para-urdu {
+    font-size: 30px;
+    letter-spacing: 2px;
   }
   .homepage footer a {
     letter-spacing: 1px;
@@ -389,6 +405,13 @@ body {
   .aboutpage {
         grid-template-areas: "title title title title title title title title title title title title " ". gallery gallery gallery gallery gallery para para para para para .";
   }
+  .aboutpage .about-para .about-para-urdu {
+    letter-spacing: 2px;
+    font-size: 16px;
+  }
+  .aboutpage .about-para .about-para-eng {
+    font-size: 22px;
+  }
   .aboutpage .gallery-viewbox {
     height: 350px;
   }
@@ -401,5 +424,12 @@ body {
         align-self: flex-start;
     font-size: 24px;
     margin: 20% 10% 0% 10%;
+  }
+  .contactpage .contact-para .contact-para-urdu {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .contactpage .contact-para .contact-para {
+    font-size: 22px;
   }
 }

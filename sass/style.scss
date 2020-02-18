@@ -1,3 +1,4 @@
+@import url(//fonts.googleapis.com/earlyaccess/notonastaliqurdu.css);
 :root{
     --page-background-odd:rgb(48, 45, 45);
     --page-background-even:rgb(228, 220, 220);
@@ -6,6 +7,12 @@
     --para-color-odd:rgb(156, 151, 151);
     --para-color-even:rgb(92, 88, 88);
     --heading-font-size:20px;
+}
+.urdu-text{
+    letter-spacing:1.5px;
+    direction:rtl;
+    justify-content:right;
+    font-family: 'Noto Nastaliq Urdu', serif;
 }
 *{
     margin:0px;
@@ -73,7 +80,10 @@ background: radial-gradient(circle, rgba(62,143,60,0.989233193277311) 0%, rgba(7
         grid-area: logo;
         justify-self:center;
         align-self:center;
-        box-shadow:1px 1px 7px 0px rgba(0,0,0,0.5), -1px -1px 7px 0px rgba(255,255,255,0.5); 
+        box-shadow:-3px -3px 7px 0px rgba(0, 0, 0, 0.7),  
+        inset 3px 3px 7px 0px rgba(0, 0, 0, 0.5),
+          3px 3px 7px 0px rgba(255, 255, 255, 0.5),
+          inset -3px -3px 7px 0px rgba(255, 255, 255, 0.3) 
 
     }
     .title-eng{
@@ -92,11 +102,13 @@ background: radial-gradient(circle, rgba(62,143,60,0.989233193277311) 0%, rgba(7
         justify-self:start;
         align-self:center;
     }
-    p{
+    .main-para{
+        direction:rtl;
         color:var(--para-color-odd);
         grid-area:about;
         justify-self:center;
         align-self:center;
+        
     }
     footer{
         position: fixed;
@@ -168,7 +180,7 @@ background: radial-gradient(circle, rgba(62,143,60,0.989233193277311) 0%, rgba(7
     .gallery-viewbox{
         grid-area: gallery;
         overflow: hidden;
-        
+        align-self:center;
        position: relative;
         box-shadow: inset 0 0 12px 0px black;
         padding:10px 0px 10px 0px;
@@ -226,17 +238,12 @@ background: radial-gradient(circle, rgba(62,143,60,0.989233193277311) 0%, rgba(7
         font-size: var(--heading-font-size);
     }
     .contact-para{
-        font-family: 'Courier New', Courier, monospace;
         font-size:16px;
         padding:15px;
         grid-area:para;
         color:var(--para-color-odd);
         align-self:center;
         justify-self:center;
-        span{
-            text-align: justify;
-            direction: rtl;
-        }
     }
        .contact-form{
         grid-area: form;
@@ -248,17 +255,27 @@ background: radial-gradient(circle, rgba(62,143,60,0.989233193277311) 0%, rgba(7
 }
 @media only screen and (min-width:1000px){
     .homepage{
+
+        
         .title-eng{
             font-family: Arial, Helvetica, sans-serif;
             font-size:28px;
             letter-spacing: 3.5px;
         }
         img{
-            height:150px;
-            width:150px;
+            height:200px;
+            width:200px;
         }
         .title-urdu{
             font-size: 36px;
+        }
+        .main-para{
+            line-height: 50px;
+            font-size:32px;
+            .main-para-urdu{
+                font-size:30px;
+                letter-spacing: 2px;
+            }
         }
         footer{
             a{
@@ -276,6 +293,15 @@ background: radial-gradient(circle, rgba(62,143,60,0.989233193277311) 0%, rgba(7
     .aboutpage{
         grid-template-areas: "title title title title title title title title title title title title "
     ". gallery gallery gallery gallery gallery para para para para para .";  
+    .about-para{
+        .about-para-urdu{
+            letter-spacing:2px;
+            font-size:16px;
+        }
+        .about-para-eng{
+            font-size:22px;
+        }
+    }
     .gallery-viewbox{
         height:350px;
     }
@@ -288,7 +314,13 @@ background: radial-gradient(circle, rgba(62,143,60,0.989233193277311) 0%, rgba(7
             align-self: flex-start;
             font-size:24px;
            margin:20% 10% 0% 10%;
-            
+           .contact-para-urdu{
+               font-size:16px;
+               letter-spacing:2px;
+           }
+           .contact-para{
+               font-size:22px;
+           }
         }
                     }
 }
