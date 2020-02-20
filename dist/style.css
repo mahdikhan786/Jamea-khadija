@@ -1,12 +1,12 @@
 @import url(//fonts.googleapis.com/earlyaccess/notonastaliqurdu.css);
 :root {
-  --page-background-odd:rgb(48, 45, 45);
-  --page-background-even:rgb(228, 220, 220);
-  --heading-color-odd:rgb(156, 151, 151);
-  --heading-color-even:rgb(114, 112, 112);
-  --para-color-odd:rgb(156, 151, 151);
-  --para-color-even:rgb(92, 88, 88);
-  --heading-font-size:20px;
+  --page-background-odd: rgb(48, 45, 45);
+  --page-background-even: rgb(228, 220, 220);
+  --heading-color-odd: rgb(156, 151, 151);
+  --heading-color-even: rgb(114, 112, 112);
+  --para-color-odd: rgb(156, 151, 151);
+  --para-color-even: rgb(92, 88, 88);
+  --heading-font-size: 20px;
 }
 
 .urdu-text {
@@ -15,7 +15,7 @@
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
-  font-family: 'Noto Nastaliq Urdu', serif;
+  font-family: "Noto Nastaliq Urdu", serif;
 }
 
 * {
@@ -60,6 +60,118 @@ body {
   background: var(--page-background-odd);
 }
 
+.homepage .intro-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 10px 0px 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: var(--page-background-odd);
+  z-index: 8;
+  -webkit-transition: 1s all ease-in-out;
+  transition: 1s all ease-in-out;
+}
+
+.homepage .intro-page .entry-button {
+  -webkit-box-shadow: 0px 0px 14px -4px black;
+          box-shadow: 0px 0px 14px -4px black;
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 10px 20px;
+}
+
+.homepage .intro-page .entry-button:hover {
+  background-color: rgba(31, 163, 31, 0.856);
+}
+
+.homepage .intro-page .quran-verses p {
+  border-bottom: 1px dashed rgba(31, 163, 31, 0.856);
+  margin-bottom: 20px;
+  color: var(--heading-color-odd);
+  font-size: 16px;
+}
+
+.homepage .intro-page .quran-verses .verse-heading {
+  border: none;
+  text-align: center;
+  font-size: 20px;
+}
+
+.homepage .menu-page {
+  -webkit-transition: .7s transform ease-out;
+  transition: .7s transform ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.homepage .menu-page p {
+  color: var(--para-color-odd);
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.homepage .menu-page a {
+  border-radius: 5px;
+  font-size: 22px;
+  -webkit-transition: .5s all ease-in;
+  transition: .5s all ease-in;
+  -webkit-box-shadow: 0px 0px 10px -3px rgba(241, 234, 234, 0.637);
+          box-shadow: 0px 0px 10px -3px rgba(241, 234, 234, 0.637);
+  margin: 15px;
+  padding: 7px 20px 17px 20px;
+  text-decoration: none;
+  color: var(--para-color-odd);
+}
+
+.homepage .menu-page a:hover {
+  background-color: rgba(22, 170, 46, 0.4);
+}
+
+.homepage .menu-page .menu-page-contacts {
+  margin-bottom: 20px;
+}
+
+.homepage .menu-page .menu-page-contacts a {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.homepage .menu-page .menu-page-contacts a:hover {
+  background-color: inherit;
+}
+
 .homepage header {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -84,9 +196,16 @@ body {
   width: 70px;
 }
 
+.homepage header .menubar {
+  position: relative;
+  z-index: 7;
+}
+
 .homepage header .menubar hr {
-  -webkit-transition: .35s transform ease-in;
-  transition: .35s transform ease-in;
+  -webkit-transition: 0.35s -webkit-transform ease-in;
+  transition: 0.35s -webkit-transform ease-in;
+  transition: 0.35s transform ease-in;
+  transition: 0.35s transform ease-in, 0.35s -webkit-transform ease-in;
   border: none;
   background: #0b740b;
   height: 3px;
@@ -108,8 +227,8 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  -webkit-box-shadow: -3px -3px 7px 0px rgba(0, 0, 0, 0.7), inset 3px 3px 7px 0px rgba(0, 0, 0, 0.5), 3px 3px 7px 0px rgba(255, 255, 255, 0.5), inset -3px -3px 7px 0px rgba(255, 255, 255, 0.3);
-          box-shadow: -3px -3px 7px 0px rgba(0, 0, 0, 0.7), inset 3px 3px 7px 0px rgba(0, 0, 0, 0.5), 3px 3px 7px 0px rgba(255, 255, 255, 0.5), inset -3px -3px 7px 0px rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: -3px -3px 7px 0px rgba(0, 0, 0, 0.7), inset 3px 3px 7px 0px rgba(0, 0, 0, 0.5), 1px 1px 3px 0px rgba(255, 255, 255, 0.3), inset -3px -3px 7px 0px rgba(255, 255, 255, 0.3);
+          box-shadow: -3px -3px 7px 0px rgba(0, 0, 0, 0.7), inset 3px 3px 7px 0px rgba(0, 0, 0, 0.5), 1px 1px 3px 0px rgba(255, 255, 255, 0.3), inset -3px -3px 7px 0px rgba(255, 255, 255, 0.3);
 }
 
 .homepage .title-eng {
@@ -159,7 +278,7 @@ body {
 .homepage footer {
   position: fixed;
   left: 0;
-  bottom: -.5px;
+  bottom: -0.5px;
   z-index: 5;
   width: 100vw;
   background: rgba(0, 0, 0, 0.98);
@@ -187,8 +306,8 @@ body {
           align-items: center;
   width: 100%;
   height: 100%;
-  -webkit-transition: .3s all ease-in;
-  transition: .3s all ease-in;
+  -webkit-transition: 0.3s all ease-in;
+  transition: 0.3s all ease-in;
   padding: 5px 10px 0px 10px;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
@@ -213,6 +332,20 @@ body {
 .rotate-upwards {
   -webkit-transform: rotate(-45deg) translateY(-5.5px);
           transform: rotate(-45deg) translateY(-5.5px);
+}
+
+.menu-toggler {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.opacity-toggle {
+  opacity: 0;
+}
+
+.display-toggle {
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 .aboutpage {
@@ -294,7 +427,7 @@ body {
   position: absolute;
   z-index: 4;
   background: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
+  border-radius: 50%;
   padding: 5px 10px;
   border: none;
   -webkit-box-shadow: 0px 0px 10px 0px black;
@@ -371,6 +504,9 @@ body {
 }
 
 @media only screen and (min-width: 1000px) {
+  .homepage .menu-page {
+    background: rgba(0, 0, 0, 0.96);
+  }
   .homepage .title-eng {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 28px;
