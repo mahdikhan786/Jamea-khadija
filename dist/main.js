@@ -12,6 +12,8 @@ const bottomToggle = document.querySelector(".bottom-toggler");
 const leftBtn = document.querySelector(".left-btn");
 const rightBtn = document.querySelector(".right-btn");
 const imgSlide = document.querySelector(".img-slide");
+const aboutPara = document.querySelector(".about-para");
+const contactPara = document.querySelector(".contact-para");
 const sliderImages = document.querySelectorAll(".slide-img");
 
 // variables
@@ -59,6 +61,21 @@ const introPageFade = () => {
   }, 500)
 };
 
+// Appear function
+const appear = () => {
+  let aboutToTop = aboutPara.getBoundingClientRect().top;
+  let contactToTop = contactPara.getBoundingClientRect().top;
+  let screenHeight = window.innerHeight;
+ 
+  if(aboutToTop < (screenHeight / 1.3)){
+    aboutPara.style.opacity = '1' ;
+    aboutPara.style.transform = 'translateY(0px)' ;
+  };
+  if(contactToTop < (screenHeight / 1.3)){
+   contactPara.style.opacity = '1';
+   contactPara.style.transform = 'translateY(0px)';
+  }
+ };
 
 //= menu toggler
 const menuToggler = () => {
@@ -109,3 +126,4 @@ rightBtn.addEventListener("click", leftSlide);
 leftBtn.addEventListener("click", stopSlider);
 rightBtn.addEventListener("click", stopSlider);
 entryButton.addEventListener('click', introPageFade);
+window.addEventListener('scroll', appear);
